@@ -54,9 +54,16 @@ class DisplayResultStreamlit:
                     st.error(f"An error occurred: {str(e)}")
         elif usecase == "Chatbot with RAG":
             # Chuẩn bị state ban đầu với message từ người dùng
-            initial_state = StateRAG(
-                messages=[HumanMessage(content=user_message)]
-            )
+            initial_state = {
+                "messages": [
+                    HumanMessage(content=user_message),
+                    AIMessage(content="")  # Thêm AIMessage trống để tránh lỗi
+                ],
+                "retrieve_docs": [],
+                "tavily_results": [],
+                "answer": "",
+                "recall_check_result": ""
+            }
 
             # Gọi graph, truyền thread_id để MemorySaver nhớ được
             result_state = graph.invoke(
@@ -70,16 +77,16 @@ class DisplayResultStreamlit:
 
             # Hiển thị câu trả lời cuối cùng từ RAG/Tavily
             with st.chat_message("assistant"):
-                st.write(result_state.answer)
+                st.write(result_state.get("answer", ""))
 
                 # Nếu có nguồn tài liệu từ retrieve_docs
-                if result_state.retrieve_docs:
+                if result_state.get("retrieve_docs"):
                     with st.expander("Nguồn từ RAG"):
-                        for doc in result_state.retrieve_docs:
+                        for doc in result_state["retrieve_docs"]:
                             st.markdown(f"- {doc}")
 
                 # Nếu có kết quả tìm kiếm từ Tavily
-                if result_state.tavily_results:
+                if result_state.get("tavily_results"):
                     with st.expander("Kết quả từ Tavily"):
-                        for res in result_state.tavily_results:
+                        for res in result_state["tavily_results"]:
                             st.markdown(f"- {res}")

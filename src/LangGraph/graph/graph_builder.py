@@ -66,6 +66,7 @@ class GraphBuilder:
         self.graph_builder.add_node("save_result", ai_news_node.save_result)
 
         # Add edges
+        self.graph_builder.add_edge(START, "fetch_news") # Vừa thêm mới
         self.graph_builder.set_entry_point("fetch_news")
         self.graph_builder.add_edge("fetch_news", "summarize_news")
         self.graph_builder.add_edge("summarize_news", "save_result")

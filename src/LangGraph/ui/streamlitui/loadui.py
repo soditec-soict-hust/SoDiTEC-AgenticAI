@@ -4,6 +4,9 @@ import os
 from src.LangGraph.ui.uiconfigfile import Config
 from src.LangGraph.vectorstore.file_ingestion import ingest_uploaded_file
 
+from langchain_community.embeddings import HuggingFaceEmbeddings
+import torch
+
 class LoadStreamlitUI:
     def __init__(self):
         self.config = Config()
@@ -66,6 +69,16 @@ class LoadStreamlitUI:
                 embedding_model_options = self.config.get_embedding_model_options()
                 self.user_controls["selected_embedding_model"] = st.selectbox("Select Embedding Model", embedding_model_options)
 
+                # Khởi tạo embedding model ngay khi chọn usecase RAG
+                self.user_controls["embedding_model"] = HuggingFaceEmbeddings(
+                    model_name="sentence-transformers/all-MiniLM-L6-v2",
+                    model_kwargs={"device": "cuda" if torch.cuda.is_available() else "cpu"},
+                    encode_kwargs={"normalize_embeddings": True}
+                )
+
+                # Đặt vectorstore_path mặc định
+                self.user_controls["vectorstore_path"] = "src/LangGraph/vectorstore/store"
+
                 # upload file for RAG
                 st.subheader("📂 Upload Knowledge Files for RAG")
 
@@ -92,9 +105,17 @@ class LoadStreamlitUI:
                                 st.success("File processed and uploaded to vectorstore successfully!")
                             else:
                                 st.error("Failed to process and upload file to vectorstore.")
-                        self.user_controls["vectorstore_path"] = vectorstore_path          
+                        self.user_controls["vectorstore_path"] = vectorstore_path
+
+                        # Khởi tạo object embedding model và lưu vào self.user_controls
+                        self.user_controls["embedding_model"] = HuggingFaceEmbeddings(
+                            model_name="sentence-transformers/all-MiniLM-L6-v2",
+                            model_kwargs={"device": "cuda" if torch.cuda.is_available() else "cpu"},
+                            encode_kwargs={"normalize_embeddings": True}  # chuẩn hóa để cosine similarity hoạt động tốt hơn
+                        )
+
                 else:
                     self.user_controls["uploaded_file"] = None
                     self.user_controls["vectorstore_path"] = None
-            
+                    # Giữ nguyên vectorstore_path nếu đã upload và process file trước đó 
         return self.user_controls

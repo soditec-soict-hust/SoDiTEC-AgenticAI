@@ -30,7 +30,19 @@ def ingest_uploaded_file(uploaded_file, embedding_model: str, vectorstore_path: 
         # Load embedding model
         embedding_model = AllMiniLMModel(embedding_model).get_embedding_model()
 
-        # Add to vectorstore
+        # Xóa vectorstore cũ nếu tồn tại (với xử lý lỗi permission)
+        import shutil
+        import time
+        if os.path.exists(vectorstore_path):
+            try:
+                shutil.rmtree(vectorstore_path)
+                time.sleep(1)  # Đợi 1 giây để đảm bảo file được giải phóng
+            except PermissionError:
+                print(f"Warning: Cannot delete existing vectorstore at {vectorstore_path}. Using a new directory.")
+                import uuid
+                vectorstore_path = f"{vectorstore_path}_{uuid.uuid4().hex[:8]}"
+
+        # Tạo vectorstore mới
         vectorstore = Chroma.from_documents(chunks, embedding_model, persist_directory=vectorstore_path)
 
         if len(chunks):
@@ -45,5 +57,5 @@ def ingest_uploaded_file(uploaded_file, embedding_model: str, vectorstore_path: 
             os.remove(tmp_file_path)
 
 def get_retriever(vectorstore_path: str, embedding_model: str):
-    vectorstore = Chroma(persist_directory=vectorstore_path, embedding_model=embedding_model)
+    vectorstore = Chroma(persist_directory=vectorstore_path, embedding_function=embedding_model)
     return vectorstore.as_retriever(search_kwargs={"k": 5})

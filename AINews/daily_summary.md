@@ -1,28 +1,31 @@
 # Daily AI News Summary
 
-Here is the summarized AI news in markdown format:
-
-### 2025-08-23
-
-* [Apple Introduces AI Tools for Enterprise with ChatGPT Integration](https://www.startupecosystem.ca/news/apple-introduces-ai-tools-for-enterprise-with-chatgpt-integration/) - Apple introduces new AI tools for enterprise, including an enterprise version of OpenAI's ChatGPT.
-* [Musk says xAI open-sources Grok 2.5 model](https://www.reuters.com/technology/musk-says-xai-open-sources-grok-25-2025-08-23/) - Elon Musk's AI startup xAI open-sources its Grok 2.5 model.
-* [Credit Fuels the AI Boom and Fears of a Bubble](https://www.bloomberg.com/news/articles/2025-08-23/credit-fuels-the-ai-boom-and-fears-of-a-bubble-credit-weekly) - Credit investors are pouring billions into AI investments, raising concerns about a bubble.
-* [Meta Partners with Midjourney to License AI Technology](https://www.startupecosystem.ca/news/meta-partners-with-midjourney-to-license-ai-technology/) - Meta partners with Midjourney to license its AI technology for future products.
-* [AI Experiment Unexpectedly Reveals 1834 London Protests](https://www.startupecosystem.ca/news/ai-experiment-unexpectedly-reveals-1834-london-protests/) - An AI experiment unexpectedly reveals 1834 London protests.
+Here are the AI news articles summarized in markdown format:
 
 ### 2025-08-24
 
-* [AI in Education, Health and Agriculture Can Transform India, Says ASSOCHAM](https://zeenews.india.com/education/ai-in-education-health-and-agriculture-can-transform-india-says-assocham-2950306.html) - ASSOCHAM leaders stress that AI can transform India's education, health, and agriculture sectors.
+* **Microsoft's GPT-5 Upgrade**: Microsoft has integrated GPT-5, OpenAI's most advanced AI model, into Microsoft 365 Copilot and Copilot Studio worldwide. [Source](https://www.forbes.com/sites/quickerbettertech/2025/08/24/business-technology-news-whats-in-microsoft-copilots-gpt-5-upgrade/)
+* **xAI Open-Sources Grok 2.5 Model**: Elon Musk's artificial intelligence startup xAI has open-sourced its Grok 2.5 model and plans to do the same for its Grok 3 model in roughly six months. [Source](https://www.reuters.com/technology/musk-says-xai-open-sources-grok-25-2025-08-23/)
+* **Credit Fuels AI Boom**: Credit investors are pouring billions of dollars into artificial intelligence investments, but industry executives and analysts are raising questions about whether the new technology is inflating another bubble. [Source](https://www.bloomberg.com/news/articles/2025-08-23/credit-fuels-the-ai-boom-and-fears-of-a-bubble-credit-weekly)
+* **AI Experiment Reveals 1834 London Protests**: A historical AI model, part of a field exploring large language models, aimed to capture authentic Victorian voices and surprised its creator by referencing these historical protests. [Source](https://www.startupecosystem.ca/news/ai-experiment-unexpectedly-reveals-1834-london-protests/)
+* **Decimal Point Analytics Launches DocuAgentIQ**: Decimal Point Analytics has launched DocuAgentIQ, a purpose-built agentic AI platform that modernizes document-heavy work across SBA and CRE lending. [Source](https://markets.businessinsider.com/news/stocks/decimal-point-analytics-launches-docuagentiq---agentic-ai-platform-transforming-document-workflows-in-sba-cre-lending-1035067944)
 
 ### 2025-08-23
 
-* [Wired and Business Insider Remove AI-Generated Articles](https://www.startupecosystem.ca/news/wired-and-business-insider-remove-ai-generated-articles/) - Wired and Business Insider remove AI-generated articles from their websites.
-* [Decimal Point Analytics Launches DocuAgentIQ - Agentic AI Platform](https://markets.businessinsider.com/news/stocks/decimal-point-analytics-launches-docuagentiq-agentic-ai-platform-transforming-document-workflows-in-sba-cre-lending-1035067944) - Decimal Point Analytics launches DocuAgentIQ, an agentic AI platform for document workflows.
-* [Fox News AI Newsletter: Google, Trump Administration Reach Deal on AI for Federal Agencies](https://www.foxnews.com/tech/fox-news-ai-newsletter-google-trump-administration-reach-deal-ai-federal-agencies) - Fox News publishes an AI newsletter on the deal between Google and the Trump administration on AI for federal agencies.
-* [Lyno AI Announces Early Bird Phase as Investor Interest in AI Utility Projects Grows](https://markets.businessinsider.com/news/stocks/lyno-ai-announces-early-bird-phase-as-investor-interest-in-ai-utility-projects-grows-1035067968) - Lyno AI announces its early bird phase as investor interest in AI utility projects grows.
-* [Top Analyst Stocks](https://www.tipranks.com/news/company-announcements/alkane-resources-ltd-reports-strong-profit-growth) - TipRanks publishes a list of top analyst stocks.
+* **AI Bubble Fears Mount**: Tech stocks are selling off amid rate-cut uncertainty, with some analysts warning of an AI bubble. [Source](https://finance.yahoo.com/news/credit-fuels-ai-boom-fears-153316716.html)
+* **Google Reveals Pixel 10 Devices**: Google has revealed its Pixel 10 devices, which feature improved AI capabilities. [Source](https://www.cnet.com/videos/chinas-humanoid-robot-games-best-highlights-and-fails/)
+* **Lyno AI Announces Early Bird Phase**: Lyno AI has announced its early bird phase, marking a significant milestone as artificial intelligence utility projects begin to attract increasing investor attention. [Source](https://markets.businessinsider.com/news/stocks/lyno-ai-announces-early-bird-phase-as-investor-interest-in-ai-utility-projects-grows-1035067968)
+* **OZAK AI Hits $2.3M Milestone**: Ozak AI has hit a $2.3M milestone as its stage 4 presale closes with key partnerships. [Source](https://markets.businessinsider.com/news/stocks/ozak-ai-hits-2-3m-milestone-as-stage-4-presale-closes-with-key-partnerships-1035067901)
+* **Musk Aims to AI-Simulate Microsoft**: Elon Musk has launched Macrohard, an xAI venture aiming to AI-simulate traditional software firms like Microsoft. [Source](https://www.ainvest.com/news/musk-aims-ai-simulate-microsoft-xai-macrohard-venture-2508/)
 
-### 2025-08-23 (other)
+### 2025-08-24
 
-* [Global Electricity Demand Surges Faster Than Ever, Driven by AI, Extreme Weather Events, and Electrification of Transport and Industry](https://www.devdiscourse.com/article/technology/3548814-ai-electrification-and-extreme-weather-redefine-energy-transition-trajectory) - A new study examines the latest projections on global electricity demand and its drivers.
-* [This Week in the Circuits: Anthropic Pushes for Early Appeal in AI Fair Use Case](https://news.bloomberglaw.com/litigation/this-week-in-the-circuits-anthropic-pushes-for-early-appeal-in-ai-fair-use-case) - Bloomberg Law publishes an article on Anthropic's push for an early appeal in an AI fair use case.
+* **YouTube Secretly Used AI to Edit Videos**: YouTube has secretly used AI to edit people's videos without letting them know or asking permission. [Source](https://www.bbc.com/future/article/20250822-youtube-is-using-ai-to-edit-videos-without-permission)
+* **Roblox Loses $10 Billion in Market Cap**: Roblox has lost more than $10 billion in market cap since the controversy began with a child predator hunter being banned from its platform. [Source](https://www.tweaktown.com/news/107283/roblox-loses-dollars12-billion-in-market-cap-amid-ongoing-child-predator-controversy/index.html)
+
+### 2025-08-23
+
+* **Bosnia's Serb Statelet Calls Referendum**: Bosnia's Serb statelet has called a referendum on a verdict against its leader. [Source](https://www.digitaljournal.com/world/bosnias-serb-statelet-calls-referendum-on-verdict-against-leader/article)
+* **Ukraine Marks Independence Day**: Ukraine has marked its independence day with drone strikes on Russia. [Source](https://www.digitaljournal.com/world/ukraine-marks-independence-day-with-drone-strikes-on-russia/article)
+* **Google Reveals Pixel 10 Devices**: Google has revealed its Pixel 10 devices, which feature improved AI capabilities. [Source](https://www.cnet.com/videos/chinas-humanoid-robot-games-best-highlights-and-fails/)
+* **Chinese Humanoid Robot Games**: Chinese humanoid robots have been competing in games, showcasing their AI capabilities. [Source](https://www.cnet.com/videos/chinas-humanoid-robot-games-best-highlights-and-fails/)

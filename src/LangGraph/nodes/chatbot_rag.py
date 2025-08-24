@@ -10,8 +10,13 @@ class ChatbotWithRAG:
         self.tools = get_tools()  # Load các external tools như Tavily
 
     def internal_retrieve_node(self, state: StateRAG) -> StateRAG:
-        docs = self.retriever.invoke(state.messages)
-        state.retrieve_docs = [doc.page_content for doc in docs]
+        # Lấy nội dung của message cuối cùng từ Human làm query
+        messages = state.get("messages", [])
+        human_messages = [msg for msg in messages if hasattr(msg, 'content') and msg.__class__.__name__ == 'HumanMessage']
+        query = human_messages[-1].content if human_messages else ""
+        
+        docs = self.retriever.invoke(query)
+        state["retrieve_docs"] = [doc.page_content for doc in docs]
         return state
 
     def check_recall_node(self, state: StateRAG) -> StateRAG:
@@ -21,14 +26,16 @@ class ChatbotWithRAG:
         ])
         chain = prompt | self.llm
 
-        question = state.messages[-1].content if state.messages else ""
-        joined_docs = "\n\n".join(state.retrieve_docs or [])
+        messages = state.get("messages", [])
+        human_messages = [msg for msg in messages if hasattr(msg, 'content') and msg.__class__.__name__ == 'HumanMessage']
+        question = human_messages[-1].content if human_messages else ""
+        joined_docs = "\n\n".join(state.get("retrieve_docs", []))
         result = chain.invoke({"docs": joined_docs, "question": question})
-        state.recall_check_result = result.content.strip().lower()
+        state["recall_check_result"] = result.content.strip().lower()
         return state
 
     def route_decision(self, state: StateRAG) -> str:
-        if state.recall_check_result == "yes":
+        if state.get("recall_check_result") == "yes":
             return "use_rag"
         return "use_tavily"
 
@@ -39,10 +46,10 @@ class ChatbotWithRAG:
         ])
         chain = prompt | self.llm
 
-        context = "\n\n".join(state.retrieve_docs or [])
-        result = chain.invoke({"context": context, "messages": state.messages})
+        context = "\n\n".join(state.get("retrieve_docs", []))
+        result = chain.invoke({"context": context, "messages": state["messages"]})
 
-        state.answer = result.content.strip()
+        state["answer"] = result.content.strip()
         return state
 
     def tavily_tool_node(self, state: StateRAG) -> StateRAG:
@@ -50,8 +57,8 @@ class ChatbotWithRAG:
         updated_state = tool_node.invoke(state)
 
         # Đảm bảo cập nhật answer + kết quả tìm kiếm nếu có
-        state.answer = updated_state.answer
-        state.tavily_results = updated_state.tavily_results or []
+        state["answer"] = updated_state.get("answer", "")
+        state["tavily_results"] = updated_state.get("tavily_results", [])
         return state
 
 
